@@ -1,13 +1,21 @@
-let hack = 0
-let losovani_celkem = 0
-let losovani_aktualni_pocet = 0
-let kostka = 0
 input.onButtonPressed(Button.A, function () {
     hack = 1
 })
+input.onGesture(Gesture.Shake, function () {
+    losuj = 1
+})
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    basic.clearScreen()
+})
+let kostka = 0
+let losovani_aktualni_pocet = 0
+let losovani_celkem = 0
+let hack = 0
+let losuj = 0
+losuj = 0
 basic.forever(function () {
     losovani_celkem = 50
-    if (input.buttonIsPressed(Button.B)) {
+    if (input.buttonIsPressed(Button.B) || losuj == 1) {
         for (let index = 0; index < losovani_celkem; index++) {
             losovani_aktualni_pocet += 1
             kostka = randint(1, 6)
@@ -66,5 +74,6 @@ basic.forever(function () {
             }
         }
         losovani_aktualni_pocet = 0
+        losuj = 0
     }
 })
