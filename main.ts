@@ -1,8 +1,8 @@
-input.onButtonPressed(Button.A, function () {
-    hack = 1
-})
 input.onGesture(Gesture.Shake, function () {
     losuj = 1
+})
+input.onButtonPressed(Button.A, function () {
+    hack = 1
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     basic.clearScreen()
@@ -25,19 +25,19 @@ basic.forever(function () {
             }
             if (kostka == 1) {
                 basic.showLeds(`
-                        . . . . .
+                        # . . . .
                                             . . . . .
                                             . . # . .
                                             . . . . .
-                                            . . . . .
+                                            . . . . #
                     `, 10)
             } else if (kostka == 2) {
                 basic.showLeds(`
-                        . . . . .
-                                            . # . . .
+                        # . . . .
                                             . . . . .
-                                            . . . # .
+                                            . . # . .
                                             . . . . .
+                                            . . . . #
                     `, 10)
             } else if (kostka == 3) {
                 basic.showLeds(`
